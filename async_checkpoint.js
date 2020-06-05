@@ -25,11 +25,16 @@ var typearr = [];
 
 //Using https://pokeapi.co/api/v2/pokemon/ API
 const fetch = require('node-fetch');
-for (var index=0; index < pokemonarr.length;index ++) //loop for all pokemon 
+for (var index=0; index < pokemonarr.length;index ++) //loop for all pokemon in input file
 fetch('https://pokeapi.co/api/v2/pokemon/' + pokemonarr[index])
   .then(response => response.json())
   .then(json => {
         for (var x=0; x<json.types.length; x++){ //loop for all types
-            console.log(json.types[x])
+            //save each value to a typearray "json.types[x].type.name"
         }
+        //Save pokeobject {"name" = pokemonarr[index], "Type": typearray
+        // reset typearray value
   })
+  //for in loop to iterate over object
+  // console.log object properties to seperate lines
+  // Not very good with the syntax yet so taking me long time to look up the different methods
