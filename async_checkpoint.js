@@ -5,8 +5,17 @@ Example file input (input.txt)
 
 charizard
 pikachu
+
 Example console output:
 
 Charizard: flying, fire
 Pikachu: electric
 */
+const fetch = require('node-fetch');
+var fs = require("fs");
+
+//read text from file input to variable
+var textinput = fs.readFileSync("input.txt", "utf8");
+var textByLine = textinput.split("\n"); // To Array
+
+//Using 
