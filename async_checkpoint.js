@@ -11,11 +11,20 @@ Example console output:
 Charizard: flying, fire
 Pikachu: electric
 */
-const fetch = require('node-fetch');
+//*** Global Declarations ***
 var fs = require("fs");
 
+
+
+//** MAIN ***
 //read text from file input to variable
 var textinput = fs.readFileSync("input.txt", "utf8");
-var textByLine = textinput.split("\n"); // To Array
+var pokemonarr = textinput.split("\n"); // To Array
 
-//Using 
+//Using https://pokeapi.co/api/v2/pokemon/ API
+const fetch = require('node-fetch'); 
+fetch('pokeapi.co/api/v2/pokemon/' + pokemonarr[0])
+  .then(response => response.json())
+  .then(json => {
+        console.log(json.types)
+  })
