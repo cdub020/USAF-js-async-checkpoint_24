@@ -45,14 +45,13 @@ const getPokemonData = async (pokemon) => {
       };
       return pokeobj; //return object
     }
-
-  catch{ //If anything doesn't work out, its your fault.
+  //If anything doesn't work out, its your fault.
+  catch{ 
     console.log("Oops, you did something wrong."); 
   }
 }
 
-//** MAIN ***
-//read text from file input to variable
+//*********** MAIN **************
 
 var pokemonarr = read_text(); //save all the pokemon from file to array (lowercase)
 for (var index = 0; index < pokemonarr.length; index++){ //iterate for how many pokemon we have
